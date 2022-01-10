@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "00164fc7-0328-4f38-81ee-a65a40faf1f6",
+		"name": "testBookMark Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "nickName get request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://httpbin.org/get",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "args",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "args3",
+							"value": "caonima",
+							"disabled": true
+						},
+						{
+							"key": "args2",
+							"value": "nimabaaaaaaadasdasd",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get UUID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"pm.globals.set(\"myuuid\", response.uuid);\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://httpbin.org/uuid",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"uuid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post req",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"John\",\r\n    \"email\": \"email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://httpbin.org/post",
+					"protocol": "https",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api-iam.intercom.io/:bb/web/ping",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code asdasda is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"let myVar = pm.environment.get(\"testData\")\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();    \r",
+							"    pm.expect(jsonData.app.name).to.eql(myVar)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "api-iam.intercom.io"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"96\", \"Google Chrome\";v=\"96\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "content-type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "origin",
+						"value": "https://www.udemy.com"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "app_id",
+							"value": "sehj53dd",
+							"type": "text"
+						},
+						{
+							"key": "v",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "g",
+							"value": "undefined",
+							"type": "text"
+						},
+						{
+							"key": "s",
+							"value": "cbe3e17f-da1e-476e-9fa6-89b5f6674ab8",
+							"type": "text"
+						},
+						{
+							"key": "r",
+							"value": "https://www.udemy.com/course/postman-the-complete-guide/",
+							"type": "text"
+						},
+						{
+							"key": "platform",
+							"value": "web",
+							"type": "text"
+						},
+						{
+							"key": "Idempotency-Key",
+							"value": "7cde140efd8a2f77",
+							"type": "text"
+						},
+						{
+							"key": "internal",
+							"value": "{}",
+							"type": "text"
+						},
+						{
+							"key": "page_title",
+							"value": "Postman: The Complete Guide - REST API Testing | Udemy",
+							"type": "text"
+						},
+						{
+							"key": "user_active_company_id",
+							"value": "-1",
+							"type": "text"
+						},
+						{
+							"key": "user_data",
+							"value": "{\"email\":\"shenhan_aholic@hotmail.com\",\"user_id\":40164841,\"user_hash\":\"c202d77f2ddbc42d8b5853a63b14cb9e169eb642de981bd0d84dec598b8be6d3\"}",
+							"type": "text"
+						},
+						{
+							"key": "source",
+							"value": "apiUpdate",
+							"type": "text"
+						},
+						{
+							"key": "sampling",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "referer",
+							"value": "https://www.udemy.com/course/postman-the-complete-guide/learn/lecture/7383000#overview",
+							"type": "text"
+						},
+						{
+							"key": "anonymous_session",
+							"value": "VDY0a3FJUnBMb2xzc3Q3aDVzQ3NxaUtMNGFSREZlcjNVYTRrRHhHYitXd1Z5UkhpSUR0Y3YxbFBsRDBmWjB1dC0tWDAwZFJkYXUyUkdwL1gveXZHYWkrQT09--b145807046b35b0dda68dbc183e095e7d118bd52",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api-iam.intercom.io/:bb/web/ping",
+					"protocol": "https",
+					"host": [
+						"api-iam",
+						"intercom",
+						"io"
+					],
+					"path": [
+						":bb",
+						"web",
+						"ping"
+					],
+					"query": [
+						{
+							"key": "kiki",
+							"value": "doyouloveme",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "bb",
+							"value": "messenger"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
